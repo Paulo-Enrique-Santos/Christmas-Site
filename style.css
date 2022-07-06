@@ -73,6 +73,7 @@ header{
     background-color: var(--darkBg-color);
     position: fixed;
     top: 0;
+    right: 0;
     width: 100%;
     padding: 20px 100px;
     display: flex;
@@ -573,6 +574,10 @@ footer .footer{
         font-size: var(--small-font);
     }
 
+    .products .cards .card{
+        height: 400px;
+    }
+
     .products h1{
         font-size: var(--medium-font);
     }
@@ -583,6 +588,10 @@ footer .footer{
 
     .letsgo h1{
         font-size: var(--medium-font);
+    }
+
+    footer{
+        padding-top: 50px;
     }
 }
 
