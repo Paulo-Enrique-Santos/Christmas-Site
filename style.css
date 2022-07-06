@@ -1,0 +1,579 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+:root{
+    --bg-color: #202020;
+    --darkBg-color: #131313;
+    --main-color: #a70006;
+    --main2-color: #058e27;
+    --text-color: #e6e6e6; 
+    --mainDark-color: #900000;
+    --main2Dark-color: #06561a;
+    --christmas-font: 'Satisfy', cursive;
+    --text-font: 'Bree Serif', serif;
+    --big-font: 5rem;
+    --medium-font: 2.25rem;
+    --small-font: 1rem;
+    --verySmall-font: 0.7rem; 
+    --superSmall-font: 0.4rem; 
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    color: unset;
+    font-family: var(--text-font);
+    list-style: none;
+}
+
+body{
+    background-color: var(--bg-color);
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#snow{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+.flakes{
+    background-color: white;
+    border-radius: 50%;
+    animation: SnowFall 10s infinite ease-in-out;
+    position: absolute;
+    z-index: 7;
+}
+
+@keyframes SnowFall {
+    0%{
+        transform: translateY(0vh);
+    }
+    100%{
+        transform: translateY(105vh);
+    }
+}
+
+button{
+    padding: 10px 80px;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    background: var(--main-color);
+    color: var(--text-color);
+}
+
+header{
+    border-bottom: var(--main-color) solid 2px;
+    background-color: var(--darkBg-color);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 1px 11px 6px #151515;
+    z-index: 9999;
+}
+
+.menu{
+    display: none;
+}
+
+.menu span{
+    display: block;
+    width: 28px;
+    height: 2px;
+    border-radius: 9999px;
+    background-color: var(--main-color);
+    transition: all ease-in-out .2s;
+}
+
+.menu span:not(:last-child){
+    margin-bottom: 7px;
+}
+
+.menu.active{
+    transition-delay: .4s;
+    transform: rotate(45deg);
+}
+
+.menu.active > span:nth-child(2){
+    width: 0;
+}
+
+.menu.active > span:nth-child(1),
+.menu.active > span:nth-child(3){
+    transition-delay: .4s;
+}
+
+.menu.active > span:nth-child(1){
+    transform: translateY(9px);
+}
+
+.menu.active > span:nth-child(3){
+    transform: translateY(-9px) rotate(90deg);
+}
+
+header .nav{
+    display: flex;
+}
+
+.nav a{
+    padding: 20px 30px;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--text-color);
+}
+
+.nav a:hover {
+    color: var(--main-color);
+    transition: .4s;
+}
+
+.logo{
+    font-size: 1.8rem;
+    color: var(--main2-color);
+}
+
+.home{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    min-height: 90vh;
+    padding: 30px 50px;
+    align-items: center;
+    max-width: 100%;
+}
+
+.welcome{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+}
+
+.welcome h1{
+    margin: 1rem 0 2rem;
+    font-size: var(--medium-font);
+    font-weight: 1000;
+    color: var(--text-color);
+}
+
+.regressive{
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.regressive img{
+    max-width: 80%;
+}
+
+.regressive h1{
+    font-size: var(--medium-font);
+    color: var(--text-color);
+}
+
+.regressive a{
+    padding: 20px 50px;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    font-weight: 1000;
+    border-radius: 1rem;
+    font-size: var(--medium-font);
+    cursor: pointer;
+    text-align: center;
+}
+
+.counter{
+    padding: 10px 10px;
+    display: flex;
+    background-color: var(--darkBg-color);
+    justify-content: space-around;
+    border-radius: 1rem;
+    width: 80%;
+    margin: 2rem 0 2rem 0;
+    box-shadow: 1px 1px 11px 6px #000000;
+}
+
+.counter .card{
+    width: 24%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--main-color);
+    border-radius: 1rem;
+    color: var(--text-color);
+    font-weight: 100;
+}
+
+.counter .card h1{
+    font-size: var(--big-font);
+    font-weight: 1000;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    min-height: 90vh;
+    padding: 30px 50px;
+    align-items: center;
+}
+
+.about p{
+    font-size: var(--medium-font);
+    color: var(--text-color);
+    text-align: center;
+}
+
+.about img{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.about .desc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.about .desc h1{
+    font-size: var(--big-font);
+    color: var(--main-color);
+    padding: 10px;
+    text-align: center;
+}
+
+.about .img{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.products{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    max-width: 100%;
+}
+
+.products h1{
+    color: var(--main-color);
+    font-size: var(--big-font);
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.products .cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.products .cards .card{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--darkBg-color);
+    padding: 10px;
+    border-radius: 1rem;
+    align-items: center;
+    text-align: center;
+    width: 340px;
+    height: 340px;
+    max-width: 100%;
+}
+
+.products a{
+    background-color: var(--main-color);
+    font-size: var(--medium-font);
+    padding: 20px 50px;
+    margin-top: 40px;
+    border-radius: 20px;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.products .cards .card img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.products .cards .card .card-img{
+    width: 100%;
+    height: 50%;
+    padding: 5px;
+}
+
+.products .cards .card h2{
+    font-size: var(--medium-font);
+    color: var(--mainDark-color);
+}
+
+.products .cards .card p{
+    color: var(--text-color);
+}
+
+.products .cards .card h3{
+    color: var(--main-color);
+    font-size: var(--medium-font);
+}
+
+.letsgo{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 90vh;
+    padding: 20px;
+}
+
+.letsgo .img{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.letsgo .maps{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.letsgo h1{
+    font-size: var(--big-font);
+    color: var(--main-color);
+    padding: 20px;
+    text-align: center;
+}
+
+.letsgo .here{
+    display: flex;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.letsgo .here iframe{
+    border-radius: 1rem;
+    max-width: 100%;
+}
+
+.letsgo .here img{
+    max-width: 100%;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-top: 2px solid var(--main-color);
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+}
+
+footer .footer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer .card{
+    width: 320px;
+    height: 200px;
+    padding: 10px;
+}
+
+.footer .card h2{
+    color: var(--text-color);
+}
+
+.footer .card hr{
+    width: 20%;
+    margin: 0 0 10px;
+    border: 2px solid var(--main-color);
+}
+
+.footer .card p{
+    padding: 5px 0;
+    transition: all .5s;
+}
+
+.footer .card p:hover{
+    transform: translateX(-5px);
+    transition: all .5s;
+    cursor: pointer;
+}
+
+.footer .card .logos{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.footer .card .logos .card{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 9999px;
+    background-color: var(--main-color);
+    transition: all .5s;
+}
+
+.footer .card .logos .card img{
+    max-width: 100%;
+    min-height: 100%;
+}
+
+.footer .card .logos .card:hover{
+    cursor: pointer;
+    transform: scale(1.15);
+    transition: all .5s;
+}
+
+@media (max-width: 1140px) {
+    .nav{
+        top: -2000px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background: var(--darkBg-color);
+        transition: .3s;
+        height: 100vh;
+        padding: 100px 0px;
+    }
+
+    .regressive a{
+        font-size: var(--small-font);
+    }
+
+    .products a{
+        font-size: var(--small-font);
+    }
+    
+    
+    .nav li{
+        padding: 20px 50px;
+        margin-bottom: 10px;
+    }
+
+    header{
+        padding: 20px 80px;
+    }
+
+    .menu{
+        display: block;
+        z-index: 15;
+    }
+
+    .menu.active{
+        right: 40px;
+        position: fixed;
+    }
+
+    .counter{
+        width: 95%;
+    }
+
+    .counter .card h1{
+        font-size: var(--medium-font);
+    }    
+
+    .counter .card h2{
+        font-size: var(--small-font);
+    }    
+    
+    .about{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 575px) {
+    .home{
+        padding: 0;
+    }
+
+    .counter{
+        width: 80%;
+    }
+
+    .regressive{
+        padding: 0;
+    }
+
+    header{
+        padding: 20px 40px;
+    }
+
+    .logo{
+        font-size: 1.2rem;
+    }
+
+    .counter .card h1{
+        font-size: var(--medium-font);
+    }    
+
+    .about p{
+        font-size: var(--small-font);
+    }
+    
+    .about .desc h1{
+        font-size: var(--medium-font);
+        text-align: center;
+    }
+
+    .counter .card h2{
+        font-size: var(--verySmall-font);
+    }    
+
+    .regressive a{
+        font-size: var(--small-font);
+    }
+
+    .products h1{
+        font-size: var(--medium-font);
+    }
+
+    .products a{
+        font-size: var(--small-font);
+    }
+
+    .letsgo h1{
+        font-size: var(--medium-font);
+    }
+}
+
+@media (max-width: 390px) {    
+    .counter{
+        width: 95%;
+    }
+}
