@@ -71,3 +71,14 @@ menu.addEventListener('click', () => {
         navMenu.style.top = '0px';
     }
 });
+
+navMenu.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    if(navMenu.style.top == '0px'){
+        neve.style.zIndex = '0';
+        navMenu.style.top = '-2000px';
+    }else{
+        neve.style.zIndex = '-3';
+        navMenu.style.top = '0px';
+    }
+});
