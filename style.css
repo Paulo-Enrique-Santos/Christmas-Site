@@ -26,6 +26,7 @@
     color: unset;
     font-family: var(--text-font);
     list-style: none;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -35,19 +36,18 @@ body{
 }
 
 #snow{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    position: fixed;
     overflow: hidden;
-    box-sizing: content-box;
+    display: contents;
 }
 
 .flakes{
     background-color: white;
     border-radius: 50%;
     animation: SnowFall 10s infinite ease-in-out;
-    position: absolute;
-    z-index: 7;
+    position: fixed;
+    z-index: 40;
 }
 
 @keyframes SnowFall {
@@ -71,7 +71,7 @@ button{
 header{
     border-bottom: var(--main-color) solid 2px;
     background-color: var(--darkBg-color);
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     padding: 20px 100px;
@@ -126,8 +126,8 @@ header .nav{
 }
 
 .nav a{
-    padding: 20px 30px;
-    font-size: 1.5rem;
+    padding: 20px 20px;
+    font-size: 1.3rem;
     font-weight: 300;
     color: var(--text-color);
 }
@@ -147,7 +147,7 @@ header .nav{
     grid-template-columns: repeat(1, 1fr);
     gap: 1.5rem;
     min-height: 90vh;
-    padding: 30px 50px;
+    padding: 120px 50px 30px;
     align-items: center;
     max-width: 100%;
 }
@@ -196,6 +196,12 @@ header .nav{
     font-size: var(--medium-font);
     cursor: pointer;
     text-align: center;
+    transition: .4s;
+}
+
+.regressive a:hover{
+    transform: scale(1.15);
+    transition: .4s;
 }
 
 .counter{
@@ -234,6 +240,7 @@ header .nav{
     min-height: 90vh;
     padding: 30px 50px;
     align-items: center;
+    padding-top: 100px;
 }
 
 .about p{
@@ -276,6 +283,7 @@ header .nav{
     justify-content: center;
     min-height: 90vh;
     max-width: 100%;
+    padding-top: 100px;
 }
 
 .products h1{
@@ -304,6 +312,7 @@ header .nav{
     width: 340px;
     height: 340px;
     max-width: 100%;
+    box-shadow: 1px 1px 11px 6px #000000;
 }
 
 .products a{
@@ -314,6 +323,12 @@ header .nav{
     border-radius: 20px;
     color: var(--text-color);
     font-weight: 600;
+    transition: .4s;
+}
+
+.products a:hover{
+    transform: scale(1.15);
+    transition: .4s;
 }
 
 .products .cards .card img{
@@ -346,7 +361,7 @@ header .nav{
     align-items: center;
     flex-direction: column;
     min-height: 90vh;
-    padding: 20px;
+    padding: 50px 20px;
 }
 
 .letsgo .img{
@@ -407,7 +422,6 @@ footer .footer{
 
 .footer .card{
     width: 320px;
-    height: 200px;
     padding: 10px;
 }
 
