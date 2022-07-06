@@ -589,10 +589,6 @@ footer .footer{
     .letsgo h1{
         font-size: var(--medium-font);
     }
-
-    footer{
-        padding-top: 50px;
-    }
 }
 
 @media (max-width: 390px) {    
